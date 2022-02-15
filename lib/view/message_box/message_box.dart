@@ -3,7 +3,7 @@ import 'package:flutter_social_media_app_sample_simple/core/components/posts/pic
 import 'package:flutter_social_media_app_sample_simple/core/constant/appBar/main_app_bar.dart';
 
 class MessageBox extends StatefulWidget {
-  MessageBox({Key key}) : super(key: key);
+  MessageBox({Key? key}) : super(key: key);
 
   @override
   _MessageBoxState createState() => _MessageBoxState();
@@ -13,7 +13,7 @@ class _MessageBoxState extends State<MessageBox> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mainAppBar(context),
+      appBar: MyAppBar(),
       body: ListView(
         children: [
           buildMessage(context, "assets/image/profil_pictures/profil_picture6.jpg", "Angelina Miller"),

@@ -3,7 +3,7 @@ import 'package:flutter_social_media_app_sample_simple/view/add_friends/add_frie
 import 'package:flutter_social_media_app_sample_simple/view/home/home_page.dart';
 
 class BottomBar extends StatefulWidget {
-  BottomBar({Key key}) : super(key: key);
+  BottomBar({Key? key}) : super(key: key);
 
   @override
   _BottomBarState createState() => _BottomBarState();

@@ -6,7 +6,7 @@ import 'elements/postList.dart';
 import 'elements/stories.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();

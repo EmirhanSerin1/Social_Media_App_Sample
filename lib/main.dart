@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_social_media_app_sample_simple/core/constant/appBar/main_app_bar.dart';
 import 'package:flutter_social_media_app_sample_simple/view/add_friends/add_friends.dart';
 import 'package:flutter_social_media_app_sample_simple/view/book/book.dart';
 import 'package:flutter_social_media_app_sample_simple/view/shop/shop.dart';
 
-import 'core/constant/appBar/main_app_bar.dart';
 import 'view/home/home_page.dart';
 
 void main() {
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: mainAppBar(context),
+      appBar: MyAppBar(),
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.grey.shade600), label: "HOME", backgroundColor: Colors.black54),
