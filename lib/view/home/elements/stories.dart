@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildStory() {
+Widget buildStory(List profilPicture, story) {
   return Container(
     height: 120,
     width: double.infinity,
@@ -8,22 +8,24 @@ Widget buildStory() {
       padding: EdgeInsets.fromLTRB(20, 20, 10, 20),
       scrollDirection: Axis.horizontal,
       children: [
-        storyList("assets/image/stories/story1.jpeg", "assets/image/profil_pictures/profil_picture.jpeg"),
-        SizedBox(width: 20),
-        storyList("assets/image/stories/story2.jpeg", "assets/image/profil_pictures/profil_picture2.jpeg"),
-        SizedBox(width: 20),
-        storyList("assets/image/stories/story3.jpeg", "assets/image/profil_pictures/profil_picture3.jpeg"),
-        SizedBox(width: 20),
-        storyList("assets/image/stories/story4.jpg", "assets/image/profil_pictures/profil_picture4.jpg"),
-        SizedBox(width: 20),
-        storyList("assets/image/stories/story5.jpg", "assets/image/profil_pictures/profil_picture5.jpg"),
-        SizedBox(width: 20),
-        storyList("assets/image/stories/story6.jpg", "assets/image/profil_pictures/profil_picture6.jpg"),
-        SizedBox(width: 20),
+        storyList(story[0], profilPicture[0]),
+        getSizedBox(),
+        storyList(story[1], profilPicture[1]),
+        getSizedBox(),
+        storyList(story[2], profilPicture[2]),
+        getSizedBox(),
+        storyList(story[3], profilPicture[3]),
+        getSizedBox(),
+        storyList(story[4], profilPicture[4]),
+        getSizedBox(),
+        storyList(story[5], profilPicture[5]),
+        getSizedBox(),
       ],
     ),
   );
 }
+
+SizedBox getSizedBox() => SizedBox(width: 20);
 
 Widget storyList(String imagePath, String profilPhotoPath) {
   return Column(

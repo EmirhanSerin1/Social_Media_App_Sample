@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social_media_app_sample_simple/model/user_info.dart';
+import 'package:provider/provider.dart';
 
 import 'elements/buttons/add_frineds_button.dart';
 import 'elements/buttons/message_button.dart';
@@ -16,6 +18,11 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+    List profilPicture = Provider.of<UserInfo>(context).profilPicture;
+    List post = Provider.of<UserInfo>(context).postPath;
+    List collection = Provider.of<UserInfo>(context).collection;
+    List name = Provider.of<UserInfo>(context).userName;
+
     return Scaffold(
       body: CustomScrollView(
         primary: true,
@@ -27,7 +34,7 @@ class _ProfileState extends State<Profile> {
             backgroundColor: Colors.grey.shade900,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.asset(
-                "assets/image/post_image/post1.jpg",
+                post[0],
                 fit: BoxFit.cover,
               ),
             ),
@@ -35,7 +42,7 @@ class _ProfileState extends State<Profile> {
           SliverFillRemaining(
             child: ListView(
               children: [
-                buildContainerTop(),
+                buildContainerTop(profilPicture),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 8, 0, 8),
                   child: Row(
@@ -62,7 +69,7 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 SizedBox(height: 10),
-                buildCollection(),
+                buildCollection(collection),
                 Divider(),
                 Row(
                   children: [
@@ -74,7 +81,7 @@ class _ProfileState extends State<Profile> {
                   ],
                 ),
                 SizedBox(height: 10),
-                buildFriend(),
+                buildFriend(profilPicture, name),
               ],
             ),
           )

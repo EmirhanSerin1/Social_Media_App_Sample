@@ -28,6 +28,7 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -48,9 +49,9 @@ flutter:
     - assets/icon/facebook_image.jpeg
     - assets/icon/smile.png
 
-    - assets/image/profil_pictures/profil_picture.jpeg
-    - assets/image/profil_pictures/profil_picture2.jpeg
-    - assets/image/profil_pictures/profil_picture3.jpeg
+    - assets/image/profil_pictures/monica_marin_pp.jpeg
+    - assets/image/profil_pictures/natalia_cold_pp.jpeg
+    - assets/image/profil_pictures/paula_selling_pp.jpeg
     - assets/image/profil_pictures/profil_picture4.jpg
     - assets/image/profil_pictures/profil_picture5.jpg
     - assets/image/profil_pictures/profil_picture6.jpg

@@ -50,9 +50,12 @@ class _BookDetailState extends State<BookDetail> {
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(width: 20),
-                        Text(
-                          widget.name,
-                          style: TextStyle(fontSize: 18),
+                        Container(
+                          width: 160,
+                          child: Text(
+                            widget.name,
+                            style: TextStyle(fontSize: 18),
+                          ),
                         ),
                       ],
                     ),
@@ -65,9 +68,12 @@ class _BookDetailState extends State<BookDetail> {
                           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                         ),
                         SizedBox(width: 20),
-                        Text(
-                          widget.authors,
-                          style: TextStyle(fontSize: 18),
+                        Container(
+                          width: 160,
+                          child: Text(
+                            widget.authors,
+                            style: TextStyle(fontSize: 18),
+                          ),
                         ),
                       ],
                     ),

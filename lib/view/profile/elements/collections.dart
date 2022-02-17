@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 
-Widget buildCollection() {
+Widget buildCollection(List collection) {
   return Container(
     height: 130,
     width: double.infinity,
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/collections/collection1.jpg"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/collections/collection2.jpg"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/collections/collection3.jpg"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/collections/collection4.jpg"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/collections/collection5.jpg"),
-        SizedBox(width: 15),
+        getSizedBox(),
+        buildOneFriend(collection[0]),
+        getSizedBox(),
+        buildOneFriend(collection[1]),
+        getSizedBox(),
+        buildOneFriend(collection[2]),
+        getSizedBox(),
+        buildOneFriend(collection[3]),
+        getSizedBox(),
+        buildOneFriend(collection[4]),
+        getSizedBox(),
       ],
     ),
   );
 }
+
+SizedBox getSizedBox() => SizedBox(width: 15);
 
 buildOneFriend(String imagePath) {
   return Container(

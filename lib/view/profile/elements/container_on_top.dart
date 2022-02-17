@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-buildContainerTop() {
+buildContainerTop(List image) {
   return Card(
     elevation: 4,
     shadowColor: Colors.blue,
@@ -12,7 +12,7 @@ buildContainerTop() {
       ),
       child: Column(
         children: [
-          _buildPp(),
+          _buildPp(image),
           Text(
             "Monica Marin",
             style: TextStyle(fontSize: 22),
@@ -24,7 +24,7 @@ buildContainerTop() {
   );
 }
 
-_buildPp() {
+_buildPp(List image) {
   return Stack(
     children: [
       Padding(
@@ -34,7 +34,7 @@ _buildPp() {
           width: 130,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(64),
-            image: DecorationImage(image: AssetImage("assets/image/profil_pictures/profil_picture.jpeg"), fit: BoxFit.cover),
+            image: DecorationImage(image: AssetImage(image[0]), fit: BoxFit.cover),
           ),
         ),
       ),

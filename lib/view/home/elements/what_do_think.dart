@@ -61,7 +61,7 @@ _buildProfilPicture() {
           borderRadius: BorderRadius.circular(16),
           color: Colors.white,
           image: DecorationImage(
-            image: AssetImage("assets/image/profil_pictures/profil_picture.jpeg"),
+            image: AssetImage("assets/image/profil_pictures/monica_marin_pp.jpeg"),
             fit: BoxFit.cover,
           ),
         ),

@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 
-Widget buildFriend() {
+Widget buildFriend(List profilPicture,name) {
   return Container(
     height: 110,
     width: double.infinity,
     child: ListView(
       scrollDirection: Axis.horizontal,
       children: [
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/profil_pictures/profil_picture2.jpeg", "Paula Selling"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/profil_pictures/profil_picture3.jpeg", "Natalia Cold"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/profil_pictures/profil_picture4.jpg", "Blake Fisher"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/profil_pictures/profil_picture5.jpg", "Ryan Stun"),
-        SizedBox(width: 15),
-        buildOneFriend("assets/image/profil_pictures/profil_picture6.jpg", "Angelina Miller"),
-        SizedBox(width: 15),
+        getSizedBox(),
+        buildOneFriend(profilPicture[2], name[1]),
+        getSizedBox(),
+        buildOneFriend(profilPicture[1], name[2]),
+        getSizedBox(),
+        buildOneFriend(profilPicture[3], name[3]),
+        getSizedBox(),
+        buildOneFriend(profilPicture[4], name[4]),
+        getSizedBox(),
+        buildOneFriend(profilPicture[5], name[5]),
+        getSizedBox(),
       ],
     ),
   );
 }
+
+SizedBox getSizedBox() => SizedBox(width: 15);
 
 buildOneFriend(String imagePath, String name) {
   return Column(

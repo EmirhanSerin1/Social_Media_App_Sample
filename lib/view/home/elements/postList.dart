@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social_media_app_sample_simple/core/components/posts/posts.dart';
 
-Widget buildpagelist(BuildContext context) {
+Widget buildPostList(BuildContext context, List profilPicture, name, postImage) {
   return Container(
     padding: EdgeInsets.all(8),
     margin: EdgeInsets.all(8),
@@ -17,11 +17,11 @@ Widget buildpagelist(BuildContext context) {
         Expanded(
           flex: 1,
           child: posts(
-            "assets/image/profil_pictures/profil_picture.jpeg",
-            "Monica Marin",
+            profilPicture[0],
+            name[0],
             context,
             "Such a beautiful picture",
-            "assets/image/post_image/post1.jpg",
+            postImage[0],
             "850",
             "32",
           ),
@@ -29,11 +29,11 @@ Widget buildpagelist(BuildContext context) {
         Expanded(
           flex: 1,
           child: posts(
-            "assets/image/profil_pictures/profil_picture2.jpeg",
-            "Paula Selling",
+            profilPicture[1],
+            name[1],
             context,
             "Look at this cool tree",
-            "assets/image/post_image/post2.jpg",
+            postImage[1],
             "1.8k",
             "85",
           ),
@@ -41,11 +41,11 @@ Widget buildpagelist(BuildContext context) {
         Expanded(
           flex: 1,
           child: posts(
-            "assets/image/profil_pictures/profil_picture3.jpeg",
-            "Natalia Cold",
+            profilPicture[2],
+            name[2],
             context,
             "I like this lake",
-            "assets/image/post_image/post3.jpg",
+            postImage[2],
             "1.3k",
             "62",
           ),

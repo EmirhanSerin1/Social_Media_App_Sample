@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_social_media_app_sample_simple/core/components/posts/pictures/profil_picture_build.dart';
+import 'package:flutter_social_media_app_sample_simple/model/user_info.dart';
+import 'package:provider/provider.dart';
+
+import 'elements/build_thing_to_sell.dart';
 
 class Shop extends StatefulWidget {
   @override
@@ -9,6 +12,9 @@ class Shop extends StatefulWidget {
 class _ShopState extends State<Shop> {
   @override
   Widget build(BuildContext context) {
+    List profilPicture = Provider.of<UserInfo>(context).profilPicture;
+    List thingToSell = Provider.of<UserInfo>(context).shop;
+    List name = Provider.of<UserInfo>(context).userName;
     return ListView(
       children: [
         Row(
@@ -25,73 +31,13 @@ class _ShopState extends State<Shop> {
           ],
         ),
         buildThingToSell(
-            context, "assets/image/shop/thing_to_sell.jpg", "assets/image/profil_pictures/profil_picture6.jpg", "Angelina Miller", "Phone", "300"),
+            context, thingToSell[0], profilPicture[5], name[5], "Phone", "300"),
         buildThingToSell(
-            context, "assets/image/shop/thing_to_sell3.jpg", "assets/image/profil_pictures/profil_picture8.jpg", "Tanya Weed ", "Tablet", "400"),
+            context, thingToSell[1], profilPicture[7], name[7], "Tablet", "400"),
         buildThingToSell(
-            context, "assets/image/shop/thing_to_sell2.jpg", "assets/image/profil_pictures/profil_picture7.jpg", "Christine Rose", "Laptop", "1000"),
+            context, thingToSell[2], profilPicture[6], name[6], "Laptop", "1000"),
       ],
     );
   }
 
-  Padding buildThingToSell(BuildContext context, String imagePath, String ppImagePAth, String name, String nameofThing, String price) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Card(
-        elevation: 4,
-        shadowColor: Colors.blue,
-        child: Container(
-          height: 350,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: Colors.grey.shade900,
-          ),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  buildProfilPicture(ppImagePAth, context),
-                  Text(
-                    name,
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: double.infinity,
-                  height: 210,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(8),
-                    image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.cover),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    SizedBox(width: 10),
-                    Text(nameofThing),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  children: [
-                    SizedBox(width: 10),
-                    Text("Price: $price USD"),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }

@@ -1,14 +1,24 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_social_media_app_sample_simple/core/constant/appBar/main_app_bar.dart';
+import 'package:flutter_social_media_app_sample_simple/model/add_friend.dart';
+import 'package:flutter_social_media_app_sample_simple/model/user_info.dart';
 import 'package:flutter_social_media_app_sample_simple/view/add_friends/add_friends.dart';
 import 'package:flutter_social_media_app_sample_simple/view/book/book.dart';
 import 'package:flutter_social_media_app_sample_simple/view/shop/shop.dart';
+import 'package:provider/provider.dart';
 
 import 'view/home/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        Provider(create: (_) => UserInfo()),
+        ChangeNotifierProvider(create: (_) => AddFriend()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +42,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
   int _selectedIndex = 0;
   final tabs = [
     HomePage(),
@@ -45,11 +56,23 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: MyAppBar(),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home, color: Colors.grey.shade600), label: "HOME", backgroundColor: Colors.black54),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart, color: Colors.grey.shade600), label: "SHOP", backgroundColor: Colors.black54),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_add_alt_1_sharp, color: Colors.grey.shade600), label: "ADD FRIEND", backgroundColor: Colors.black54),
-          BottomNavigationBarItem(icon: Icon(Icons.menu_book, color: Colors.grey.shade600), label: "BOOK", backgroundColor: Colors.black54),
+              icon: Icon(Icons.home, color: Colors.grey.shade600),
+              label: "HOME",
+              backgroundColor: Colors.black54),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart, color: Colors.grey.shade600),
+              label: "SHOP",
+              backgroundColor: Colors.black54),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_add_alt_1_sharp,
+                  color: Colors.grey.shade600),
+              label: "ADD FRIEND",
+              backgroundColor: Colors.black54),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book, color: Colors.grey.shade600),
+              label: "BOOK",
+              backgroundColor: Colors.black54),
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
